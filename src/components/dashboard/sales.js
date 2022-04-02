@@ -26,7 +26,7 @@ export const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: pinkSaleChart.chart.increased.map((item) => item.rank),
-        label: "Rank",
+        label: "Missing",
         maxBarThickness: 10,
       },
       {
@@ -36,7 +36,7 @@ export const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: pinkSaleChart.chart.decreased.map((item) => item.rank),
-        label: "Missing",
+        label: "Rank",
         maxBarThickness: 10,
       },
     ],
