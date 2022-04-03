@@ -54,8 +54,12 @@ export const Sales = (props) => {
     responsive: true,
     scales: {
       yAxis: {
-        min: 1,
+        min: 0,
         max: 12,
+        ticks: {
+          stepSize: 1,
+          precision: 0,
+        },
       },
     },
     xAxes: [
