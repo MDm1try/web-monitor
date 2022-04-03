@@ -16,3 +16,19 @@ export function createPinkSaleTableUrl() {
 export function createPinkSaleChartUrl(tokenName) {
   return createUrl(`/chart`, { tokenName });
 }
+
+export function createMostVisitedTableUrl() {
+  return createUrl(`/mostvisited/table`);
+}
+
+export function createMostVisitedChartUrl(name) {
+  return createUrl(`/mostvisited/chart`, { name });
+}
+
+export function createTopSearchTableUrl() {
+  return createUrl(`/topsearch/table`);
+}
+
+export function createTopSearchChartUrl(name) {
+  return createUrl(`/topsearch/chart`, { name });
+}

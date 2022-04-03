@@ -1,13 +1,13 @@
 import Head from "next/head";
 import { Box, Container, Grid } from "@mui/material";
-import { LatestOrders } from "../components/dashboard/latest-orders";
-import { Sales } from "../components/dashboard/sales";
+import { LatestOrders } from "../components/pinksale/latest-orders";
+import { Sales } from "../components/pinksale/sales";
 import { DashboardLayout } from "../components/dashboard-layout";
 
-const Dashboard = () => (
+const Pinksale = () => (
   <>
     <Head>
-      <title>Dashboard | Material Kit</title>
+      <title>Pinksale | Material Kit</title>
     </Head>
     <Box
       component="main"
@@ -30,6 +30,6 @@ const Dashboard = () => (
   </>
 );
 
-Dashboard.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
+Pinksale.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
-export default Dashboard;
+export default Pinksale;

@@ -20,7 +20,12 @@ const items = [
   {
     href: "/",
     icon: <ChartBarIcon fontSize="small" />,
-    title: "Dashboard",
+    title: "Pinksale",
+  },
+  {
+    href: "/coinmarketcap",
+    icon: <ChartBarIcon fontSize="small" />,
+    title: "CoinmarketCap",
   },
 ];
 
