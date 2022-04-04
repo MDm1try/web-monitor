@@ -37,22 +37,12 @@ export const Sales = (props) => {
   const data = {
     datasets: [
       {
-        backgroundColor: "#D14343",
-        barPercentage: 0.5,
-        barThickness: 12,
-        borderRadius: 4,
-        categoryPercentage: 0.5,
-        data: chartData.chart.increased.map((item) => item.rank),
-        label: "Missing",
-        maxBarThickness: 10,
-      },
-      {
         backgroundColor: "#3F51B5",
         barPercentage: 0.5,
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: chartData.chart.decreased.map((item) => item.rank),
+        data: chartData.chart.all.map((item) => item.rank),
         label: "Rank",
         maxBarThickness: 10,
       },
@@ -71,8 +61,8 @@ export const Sales = (props) => {
     responsive: true,
     scales: {
       yAxis: {
-        min: 1,
-        max: 12,
+        min: 0,
+        max: 30,
         ticks: {
           stepSize: 1,
           precision: 0,
