@@ -3,7 +3,7 @@ import useSWR from "swr";
 import api from "../../lib/api";
 
 function usePinkSaleChart(name) {
-  const { data, error } = useSWR(api.createCmcMostVisitedChartUrl(name), api.get, {
+  const { data, error } = useSWR(api.createCgTrendingSearchChartUrl(name), api.get, {
     refreshInterval: 10000,
   });
 

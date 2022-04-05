@@ -27,6 +27,11 @@ const items = [
     icon: <ChartBarIcon fontSize="small" />,
     title: "CoinmarketCap",
   },
+  {
+    href: "/coingecko",
+    icon: <ChartBarIcon fontSize="small" />,
+    title: "Coingecko",
+  },
 ];
 
 export const DashboardSidebar = (props) => {

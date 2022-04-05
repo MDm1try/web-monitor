@@ -9,26 +9,53 @@ export function createUrl(url, params) {
   return queryString ? `${fullUrl}?${queryString}` : fullUrl;
 }
 
+// pinksale
 export function createPinkSaleTableUrl() {
-  return createUrl(`/table`);
+  return createUrl(`/pinksale/table`);
 }
 
 export function createPinkSaleChartUrl(tokenName) {
-  return createUrl(`/chart`, { tokenName });
+  return createUrl(`/pinksale/chart`, { tokenName });
 }
 
-export function createMostVisitedTableUrl() {
-  return createUrl(`/mostvisited/table`);
+// cmc
+export function createCmcMostVisitedTableUrl() {
+  return createUrl(`/coinmarketcap/mostvisited/table`);
 }
 
-export function createMostVisitedChartUrl(name) {
-  return createUrl(`/mostvisited/chart`, { name });
+export function createCmcMostVisitedChartUrl(name) {
+  return createUrl(`/coinmarketcap/mostvisited/chart`, { name });
 }
 
-export function createTopSearchTableUrl() {
-  return createUrl(`/topsearch/table`);
+export function createCmcTopSearchTableUrl() {
+  return createUrl(`/coinmarketcap/topsearch/table`);
 }
 
-export function createTopSearchChartUrl(name) {
-  return createUrl(`/topsearch/chart`, { name });
+export function createCmcTopSearchChartUrl(name) {
+  return createUrl(`/coinmarketcap/topsearch/chart`, { name });
+}
+
+// coingecko
+export function createCgTopTrendingUkTableUrl() {
+  return createUrl(`/coingecko/topTrendingUk/table`);
+}
+
+export function createCgTopTrendingUkChartUrl(name) {
+  return createUrl(`/coingecko/topTrendingUk/chart`, { name });
+}
+
+export function createCgTopTrendingUsTableUrl() {
+  return createUrl(`/coingecko/topTrendingUS/table`);
+}
+
+export function createCgTopTrendingUsChartUrl(name) {
+  return createUrl(`/coingecko/topTrendingUS/chart`, { name });
+}
+
+export function createCgTrendingSearchTableUrl() {
+  return createUrl(`/coingecko/trendingSearch/table`);
+}
+
+export function createCgTrendingSearchChartUrl(name) {
+  return createUrl(`/coingecko/trendingSearch/chart`, { name });
 }
