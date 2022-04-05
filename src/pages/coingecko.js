@@ -24,13 +24,13 @@ const CoinmarketCap = () => (
             <Sales />
           </Grid>
           <Grid item xl={4} md={6} xs={12}>
-            <TopTrendingUk />
+            <TrendingSearch />
           </Grid>
           <Grid item xl={4} md={6} xs={12}>
-            <TopTrendingUs />
+            <TopTrendingUk />
           </Grid>
           <Grid item xl={4} md={12} xs={12}>
-            <TrendingSearch />
+            <TopTrendingUs />
           </Grid>
         </Grid>
       </Container>

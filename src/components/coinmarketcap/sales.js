@@ -48,7 +48,7 @@ export const Sales = (props) => {
       },
     ],
     labels: chartData.chart.all.map((item) =>
-      formatDate(new Date(item.updatedAt.slice(0, -1)), "kk.mm.ss - yy.MM.dd")
+      formatDate(new Date(item.updatedAt.slice(0, -1)), "kk:mm:ss - yy.MM.dd")
     ),
   };
 
