@@ -1,10 +1,13 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { Box, Container, Grid } from "@mui/material";
+
 import { TopTrendingUk } from "../components/coingecko/top-trending-uk";
 import { TopTrendingUs } from "../components/coingecko/top-trending-us";
 import { TrendingSearch } from "../components/coingecko/trending-search";
-import { Sales } from "../components/coingecko/sales";
 import { DashboardLayout } from "../components/dashboard-layout";
+
+const Sales = dynamic(() => import("../components/coingecko/sales"), { ssr: false });
 
 const CoinmarketCap = () => (
   <>

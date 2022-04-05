@@ -1,4 +1,5 @@
 import { Bar } from "react-chartjs-2";
+import { Chart as ChartJS, registerables } from "chart.js";
 import {
   Box,
   Card,
@@ -11,14 +12,17 @@ import {
   Select,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import useTopTrendingUkChart from "src/hooks/coingecko/useTopTrendingUkChart";
 import useTopTrendingUsChart from "src/hooks/coingecko/useTopTrendingUsChart";
 import useTrendingSearchChart from "src/hooks/coingecko/useTrendingSearchChart";
+import pluginZoom from "chartjs-plugin-zoom";
 
 import formatDate from "date-fns/format";
+
+ChartJS.register(...registerables, pluginZoom);
 
 function selectData(token, data) {
   switch (token) {
@@ -36,8 +40,9 @@ function selectData(token, data) {
   }
 }
 
-export const Sales = (props) => {
+const Sales = (props) => {
   const theme = useTheme();
+  const chartContainerRef = useRef();
 
   const [name, setTokenName] = useState("");
   const [chart, setChart] = useState("Trending Search");
@@ -59,6 +64,14 @@ export const Sales = (props) => {
   const handleChangeTokenName = (event, newValue) => {
     setTokenName(newValue);
   };
+
+  const width = useMemo(() => chartData.chart.all.length * 40, [chartData.chart.all.length]);
+
+  useEffect(() => {
+    if (chartContainerRef.current) {
+      chartContainerRef.current.scrollLeft += width;
+    }
+  }, [width]);
 
   const data = {
     datasets: [
@@ -135,6 +148,25 @@ export const Sales = (props) => {
       mode: "index",
       titleFontColor: theme.palette.text.primary,
     },
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true, // SET SCROOL ZOOM TO TRUE
+          },
+          pinch: {
+            enabled: true,
+          },
+          mode: "x",
+          speed: 100,
+        },
+        pan: {
+          enabled: true,
+          mode: "x",
+          speed: 100,
+        },
+      },
+    },
   };
 
   const handleChangeChart = (v) => {
@@ -171,11 +203,13 @@ export const Sales = (props) => {
         }
       />
       <Divider />
-      <CardContent>
+      <CardContent ref={chartContainerRef} sx={{ overflowX: "auto" }}>
         <Box
           sx={{
             height: 400,
             position: "relative",
+            width,
+            minWidth: "100%",
           }}
         >
           <Bar data={data} options={options} />
@@ -185,3 +219,5 @@ export const Sales = (props) => {
     </Card>
   );
 };
+
+export default Sales;

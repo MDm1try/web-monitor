@@ -1,8 +1,11 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { Box, Container, Grid } from "@mui/material";
+
 import { LatestOrders } from "../components/pinksale/latest-orders";
-import { Sales } from "../components/pinksale/sales";
 import { DashboardLayout } from "../components/dashboard-layout";
+
+const Sales = dynamic(() => import("../components/pinksale/sales"), { ssr: false });
 
 const Pinksale = () => (
   <>

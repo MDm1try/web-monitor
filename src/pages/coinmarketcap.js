@@ -1,9 +1,12 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { Box, Container, Grid } from "@mui/material";
+
 import { Trending } from "../components/coinmarketcap/trending";
 import { MostVisited } from "../components/coinmarketcap/most-visited";
-import { Sales } from "../components/coinmarketcap/sales";
 import { DashboardLayout } from "../components/dashboard-layout";
+
+const Sales = dynamic(() => import("../components/coinmarketcap/sales"), { ssr: false });
 
 const CoinmarketCap = () => (
   <>
