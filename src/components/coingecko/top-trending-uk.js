@@ -14,16 +14,10 @@ import {
 } from "@mui/material";
 import useTopTrendingUkTable from "src/hooks/coingecko/useTopTrendingUkTable";
 import { SeverityPill } from "../severity-pill";
+import getColorRank from "src/utils/get-color-rank";
 
 export const TopTrendingUk = (props) => {
   const { data, isLoading } = useTopTrendingUkTable();
-
-  const getColorRank = (prevRank) => {
-    if (prevRank === 0) {
-      return "warning";
-    }
-    return prevRank > 0 ? "success" : "error";
-  };
 
   const timestamp = useMemo(() => {
     return data.updatedAt
