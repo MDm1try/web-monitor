@@ -12,13 +12,13 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import useMostVisitedTable from "src/hooks/coinmarketcap/useMostVisitedTable";
+import useArbitriumTable from "src/hooks/dextools/useArbitriumTable";
 import { SeverityPill } from "../severity-pill";
 import getColorRank from "src/utils/get-color-rank";
 import useTime from "src/hooks/useTime";
 
-export const MostVisited = (props) => {
-  const { data, isLoading } = useMostVisitedTable();
+export const Arbitrium = (props) => {
+  const { data, isLoading } = useArbitriumTable();
   const [refreshTime, setRefreshTime] = useTime(data.expectedUpdate, 1000);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export const MostVisited = (props) => {
   return (
     <Card {...props}>
       <CardHeader
-        title="Most Visited"
+        title="Arbitrium"
         subheader={
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography color="textPrimary" variant="body1">

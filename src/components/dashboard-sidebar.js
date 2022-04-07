@@ -2,35 +2,45 @@ import { useEffect } from "react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from "@mui/material";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { Box, Divider, Drawer, useMediaQuery } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+
 import { ChartBar as ChartBarIcon } from "../icons/chart-bar";
-import { Cog as CogIcon } from "../icons/cog";
-import { Lock as LockIcon } from "../icons/lock";
-import { Selector as SelectorIcon } from "../icons/selector";
-import { ShoppingBag as ShoppingBagIcon } from "../icons/shopping-bag";
-import { User as UserIcon } from "../icons/user";
-import { UserAdd as UserAddIcon } from "../icons/user-add";
-import { Users as UsersIcon } from "../icons/users";
-import { XCircle as XCircleIcon } from "../icons/x-circle";
+import { Dextools } from "../icons/dextools";
+
 import { Logo } from "./logo";
 import { NavItem } from "./nav-item";
 
 const items = [
   {
     href: "/",
-    icon: <ChartBarIcon fontSize="small" />,
+    icon: (
+      <Avatar src="/static/images/pinksale.png" sx={{ width: 20, height: 20 }} alt="Pinksale" />
+    ),
     title: "Pinksale",
   },
   {
     href: "/coinmarketcap",
-    icon: <ChartBarIcon fontSize="small" />,
+    icon: (
+      <Avatar
+        src="/static/images/coinmarketcap.png"
+        sx={{ width: 22, height: 22 }}
+        alt="CoinmarketCap"
+      />
+    ),
     title: "CoinmarketCap",
   },
   {
     href: "/coingecko",
-    icon: <ChartBarIcon fontSize="small" />,
+    icon: (
+      <Avatar src="/static/images/coingecko.png" sx={{ width: 20, height: 20 }} alt="Coingecko" />
+    ),
     title: "Coingecko",
+  },
+  {
+    href: "/dextools",
+    icon: <Dextools fontSize="small" />,
+    title: "Dextools",
   },
 ];
 

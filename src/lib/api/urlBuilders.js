@@ -59,3 +59,29 @@ export function createCgTrendingSearchTableUrl() {
 export function createCgTrendingSearchChartUrl(name) {
   return createUrl(`/coingecko/trendingSearch/chart`, { name });
 }
+
+// dextools
+
+export function createDtArbitriumTableUrl() {
+  return createUrl(`/dextools/arbitrium/table`);
+}
+
+export function createDtArbitriumChartUrl(name) {
+  return createUrl(`/dextools/arbitrium/chart`, { name });
+}
+
+export function createDtBscTableUrl() {
+  return createUrl(`/dextools/bsc/table`);
+}
+
+export function createDtBscChartUrl(name) {
+  return createUrl(`/dextools/bsc/chart`, { name });
+}
+
+export function createDtEthereumTableUrl() {
+  return createUrl(`/dextools/ethereum/table`);
+}
+
+export function createDtEthereumChartUrl(name) {
+  return createUrl(`/dextools/ethereum/chart`, { name });
+}

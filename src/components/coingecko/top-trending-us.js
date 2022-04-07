@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import CircularProgress from "@mui/material/CircularProgress";
 import {
@@ -15,9 +15,15 @@ import {
 import useTopTrendingUsTable from "src/hooks/coingecko/useTopTrendingUsTable";
 import { SeverityPill } from "../severity-pill";
 import getColorRank from "src/utils/get-color-rank";
+import useTime from "src/hooks/useTime";
 
 export const TopTrendingUs = (props) => {
   const { data, isLoading } = useTopTrendingUsTable();
+  const [refreshTime, setRefreshTime] = useTime(data.expectedUpdate, 1000);
+
+  useEffect(() => {
+    setRefreshTime(data.expectedUpdate);
+  }, [data.expectedUpdate, data.updatedAt, setRefreshTime]);
 
   const timestamp = useMemo(() => {
     return data.updatedAt
@@ -30,9 +36,14 @@ export const TopTrendingUs = (props) => {
       <CardHeader
         title="Top Trending Cryptocurrencies In United States"
         subheader={
-          <Typography color="textPrimary" variant="body1">
-            {`${timestamp}s`}
-          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography color="textPrimary" variant="body1">
+              {`${timestamp}s`}
+            </Typography>
+            <Typography color="textPrimary" variant="body1">
+              {`Expected Update: in ${parseInt(refreshTime / 60, 10)} minutes`}
+            </Typography>
+          </Box>
         }
       />
 
@@ -43,7 +54,7 @@ export const TopTrendingUs = (props) => {
               <TableRow>
                 <TableCell align="center">Current RANK</TableCell>
                 <TableCell align="center">Token Name</TableCell>
-                <TableCell align="center">Current - Previous rank</TableCell>
+                <TableCell align="center">OLD RANK</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
