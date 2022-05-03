@@ -2,16 +2,16 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Box, Container, Grid } from "@mui/material";
 
-import { Trending } from "../components/coinmarketcap/trending";
-import { MostVisited } from "../components/coinmarketcap/most-visited";
+import { TopSearched } from "../components/playtoearn/top-searched";
+import { MostVisited } from "../components/playtoearn/most-visited";
 import { DashboardLayout } from "../components/dashboard-layout";
 
-const Sales = dynamic(() => import("../components/coinmarketcap/sales"), { ssr: false });
+const Sales = dynamic(() => import("../components/playtoearn/sales"), { ssr: false });
 
-const CoinmarketCap = () => (
+const PlayToEarn = () => (
   <>
     <Head>
-      <title>CoinmarketCap | Monitor</title>
+      <title>PlayToEarn | Monitor</title>
     </Head>
     <Box
       component="main"
@@ -26,7 +26,7 @@ const CoinmarketCap = () => (
             <Sales />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Trending />
+            <TopSearched />
           </Grid>
           <Grid item md={6} xs={12}>
             <MostVisited />
@@ -37,6 +37,6 @@ const CoinmarketCap = () => (
   </>
 );
 
-CoinmarketCap.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
+PlayToEarn.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
-export default CoinmarketCap;
+export default PlayToEarn;

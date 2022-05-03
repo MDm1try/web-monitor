@@ -7,7 +7,7 @@ function usePinksaleTable() {
     refreshInterval: 10000,
   });
 
-  return { error, data: data || { expectedUpdate: 5 * 60 }, isLoading: !error && !data };
+  return { error, data: data || { expectedUpdate: 0 }, isLoading: !error && !data };
 }
 
 export default usePinksaleTable;

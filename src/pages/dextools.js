@@ -12,7 +12,7 @@ const Sales = dynamic(() => import("../components/dextools/sales"), { ssr: false
 const Dextools = () => (
   <>
     <Head>
-      <title>Dextools | Material Kit</title>
+      <title>Dextools | Monitor</title>
     </Head>
     <Box
       component="main"

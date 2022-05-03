@@ -12,7 +12,7 @@ const Sales = dynamic(() => import("../components/coingecko/sales"), { ssr: fals
 const CoinmarketCap = () => (
   <>
     <Head>
-      <title>Coingecko | Material Kit</title>
+      <title>Coingecko | Monitor</title>
     </Head>
     <Box
       component="main"

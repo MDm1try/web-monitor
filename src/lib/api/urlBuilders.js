@@ -85,3 +85,20 @@ export function createDtEthereumTableUrl() {
 export function createDtEthereumChartUrl(name) {
   return createUrl(`/dextools/ethereum/chart`, { name });
 }
+
+// playtoearn
+export function createPleMostVisitedTableUrl() {
+  return createUrl(`/playtoearn/mostvisited/table`);
+}
+
+export function createPleMostVisitedChartUrl(name) {
+  return createUrl(`/playtoearn/mostvisited/chart`, { name });
+}
+
+export function createPleTopSearchTableUrl() {
+  return createUrl(`/playtoearn/topsearch/table`);
+}
+
+export function createPleTopSearchChartUrl(name) {
+  return createUrl(`/playtoearn/topsearch/chart`, { name });
+}

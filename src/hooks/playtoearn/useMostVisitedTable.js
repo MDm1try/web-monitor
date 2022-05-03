@@ -3,7 +3,7 @@ import useSWR from "swr";
 import api from "../../lib/api";
 
 function usePinksaleTable() {
-  const { data, error } = useSWR(api.createDtArbitriumTableUrl(), api.get, {
+  const { data, error } = useSWR(api.createPleMostVisitedTableUrl(), api.get, {
     refreshInterval: 10000,
   });
 

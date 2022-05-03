@@ -42,6 +42,13 @@ const items = [
     icon: <Dextools fontSize="small" />,
     title: "Dextools",
   },
+  {
+    href: "/playtoearn",
+    icon: (
+      <Avatar src="/static/images/playtoearn.png" sx={{ width: 20, height: 20 }} alt="PlaytoEarn" />
+    ),
+    title: "PlaytoEarn",
+  },
 ];
 
 export const DashboardSidebar = (props) => {
